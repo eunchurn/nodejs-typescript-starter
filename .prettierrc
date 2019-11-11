@@ -1,4 +1,6 @@
 {
+  "semi": true,
   "tslintIntegration": true,
-  "singleQuote": false
+  "singleQuote": false,
+  "printWidth": 70
 }
