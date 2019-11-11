@@ -1,4 +1,4 @@
-import add from "@src/add";
+import add from "@libs/add";
 
 describe("add two number", () => {
   test("positive integer", () => {
