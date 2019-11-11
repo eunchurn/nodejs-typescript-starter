@@ -1,6 +1,9 @@
 # NodeJS Typescript Bolierplate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/eunchurn/nodejs-typescript-starter.svg)](https://greenkeeper.io/)
+
 [nodeJS](https://nodejs.org) apllication starter kit with [Typescript](https://www.typescriptlang.org/), [tslint](https://palantir.github.io/tslint/) and [prettier](https://prettier.io/), [jest](https://jestjs.io/), [travis](https://travis-ci.org/), [codecov](https://codecov.io), [husky](https://github.com/typicode/husky), [vscode](https://code.visualstudio.com/) configuration(modules resolver alias like `@libs`, `@build`).
+
 
 ## Files tree
 
