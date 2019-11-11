@@ -43,21 +43,22 @@
     "start": "ts-node ./src/index.ts",
     "test": "jest",
     "tree": "tree -a -I 'node_modules|.git|coverage'",
+    "typecheck": "yarn clean && tsc --noUnusedLocals",
     "watch": "tsc -w"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged && yarn run typecheck",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
-    "*.ts": [
-      "tslint -c tslint.json --fix",
+    "src/**/*.{ts,tsx}": [
+      "tslint --project tsconfig.json -c tslint.json --fix",
       "prettier --write",
       "git add"
     ],
-    "*.{json,css,md}": [
+    "src/**/*.{json,css,md}": [
       "prettier --write",
       "git add"
     ]
