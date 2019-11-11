@@ -40,7 +40,7 @@
     "lint:fix": "yarn lint-src:fix && yarn lint-test:fix",
     "prerelease": "yarn lint && yarn test && yarn build",
     "release": "standard-version",
-    "start": "ts-node ./src/index.ts",
+    "start": "ts-node -p tsconfig.json ./src/index.ts",
     "test": "jest",
     "tree": "tree -a -I 'node_modules|.git|coverage'",
     "typecheck": "yarn clean && tsc --noUnusedLocals",
