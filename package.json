@@ -1,0 +1,83 @@
+{
+  "name": "nodejs-typescript-start",
+  "version": "0.0.1",
+  "description": "nodeJS apllication starter kit with Typescript, tslint, prettier, jest, travis, codecov, husky, vscode configuration(modules resolver alias like @libs, @build).",
+  "keywords": [
+    "jest",
+    "node",
+    "prettier",
+    "tslint"
+  ],
+  "homepage": "https://github.com/eunchurn/nodejs-typescript-starter#readme",
+  "bugs": {
+    "url": "https://github.com/eunchurn/nodejs-typescript-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eunchurn/nodejs-typescript-starter"
+  },
+  "author": {
+    "name": "Eunchurn Park",
+    "email": "eunchurn.park@gmail.com",
+    "url": "https://github.com/eunchurn/"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "yarn clean",
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "coverage": "yarn test --coverage",
+    "postcoverage": "open-cli coverage/lcov-report/index.html",
+    "lint": "yarn lint-src && yarn lint-test",
+    "lint-src": "tslint -c tslint.json -p tsconfig.json",
+    "lint-src:fix": "tslint -c tslint.json -p tsconfig.json --fix",
+    "lint-test": "tslint test/**/*.ts -c tslint.json",
+    "lint-test:fix": "tslint test/**/*.ts -c tslint.json --fix",
+    "lint:fix": "yarn lint-src:fix && yarn lint-test:fix",
+    "prerelease": "yarn lint && yarn test && yarn build",
+    "release": "standard-version",
+    "start": "ts-node ./src/index.ts",
+    "test": "jest",
+    "tree": "tree -a -I 'node_modules|.git|coverage'",
+    "watch": "tsc -w"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint -c tslint.json --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/jest": "^24.0.22",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
+    "open-cli": "^5.0.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "standard-version": "^7.0.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.5.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.7.2"
+  }
+}

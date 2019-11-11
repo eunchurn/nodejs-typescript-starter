@@ -1,0 +1,37 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier"
+  ],
+  "jsRules": {},
+  "rules": {
+    "prettier": [
+      true,
+      ".prettierrc"
+    ]
+  },
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "@src",
+            "./src/"
+          ],
+          [
+            "@libs",
+            "./src/libs/"
+          ],
+          [
+            "@build",
+            "./build/Release/"
+          ]
+        ]
+      }
+    }
+  }
+}
