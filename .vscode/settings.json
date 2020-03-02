@@ -2,5 +2,8 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "typescript.preferences.quoteStyle": "double",
-  "tslint.autoFixOnSave": true
+  "tslint.autoFixOnSave": true,
+  "javascript.validate.enable": false,
+  "typescript.format.enable": false,
+  "typescript.validate.enable": false
 }

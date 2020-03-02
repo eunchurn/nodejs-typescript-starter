@@ -1,3 +1,3 @@
-export default function add(x: number = 0, y: number = 0): number {
-  return x + y;
-}
+const add = (x = 0, y = 0): number => x + y;
+
+export default add;
