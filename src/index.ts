@@ -1,3 +1,4 @@
+import "module-alias/register";
 import add from "@libs/add";
 import "dotenv/config";
 
